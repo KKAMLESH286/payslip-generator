@@ -145,11 +145,6 @@ class PayslipPdfGenerator {
                   ],
                 ),
               ),
-
-              pw.Spacer(),
-
-              // Signature Section
-              _buildSignatureSection(payslip.company),
             ],
           );
         },
@@ -458,75 +453,6 @@ class PayslipPdfGenerator {
           ),
         ],
       ),
-    );
-  }
-
-  static pw.Widget _buildSignatureSection(Company company) {
-    return pw.Row(
-      mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-      children: [
-        pw.Column(
-          crossAxisAlignment: pw.CrossAxisAlignment.start,
-          children: [
-            pw.Text(
-              'Prepared by:',
-              style: pw.TextStyle(
-                fontSize: 9,
-                fontWeight: pw.FontWeight.bold,
-              ),
-            ),
-            pw.SizedBox(height: 30),
-            pw.Container(
-              width: 150,
-              decoration: const pw.BoxDecoration(
-                border: pw.Border(
-                  top: pw.BorderSide(color: PdfColors.black, width: 0.5),
-                ),
-              ),
-              padding: const pw.EdgeInsets.only(top: 5),
-              child: pw.Column(
-                crossAxisAlignment: pw.CrossAxisAlignment.start,
-                children: [
-                  pw.Text(
-                    company.ceo,
-                    style: const pw.TextStyle(fontSize: 9),
-                  ),
-                  pw.Text(
-                    company.name,
-                    style: const pw.TextStyle(fontSize: 8),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        pw.Column(
-          crossAxisAlignment: pw.CrossAxisAlignment.start,
-          children: [
-            pw.Text(
-              'Employee Signature:',
-              style: pw.TextStyle(
-                fontSize: 9,
-                fontWeight: pw.FontWeight.bold,
-              ),
-            ),
-            pw.SizedBox(height: 30),
-            pw.Container(
-              width: 150,
-              decoration: const pw.BoxDecoration(
-                border: pw.Border(
-                  top: pw.BorderSide(color: PdfColors.black, width: 0.5),
-                ),
-              ),
-              padding: const pw.EdgeInsets.only(top: 5),
-              child: pw.Text(
-                '',
-                style: const pw.TextStyle(fontSize: 9),
-              ),
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
