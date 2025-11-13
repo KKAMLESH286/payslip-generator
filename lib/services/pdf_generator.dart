@@ -490,12 +490,12 @@ class PayslipPdfGenerator {
             // Signature image if available
             if (signatureImage != null)
               pw.Container(
-                width: 150,
-                height: 40,
+                width: 80,
+                height: 20,
                 child: pw.Image(signatureImage, fit: pw.BoxFit.contain),
               )
             else
-              pw.SizedBox(height: 35),
+              pw.SizedBox(height: 20),
             pw.Container(
               width: 150,
               decoration: const pw.BoxDecoration(
