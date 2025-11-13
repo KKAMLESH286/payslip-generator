@@ -20,10 +20,8 @@ class Employee {
   final String name;
   final String email;
   final String position;
-  final String employeeId;
   final String department;
   final String bankAccount;
-  final String taxId;
   final String location;
   final String cryptoAddress;
   final String cryptoCurrency;
@@ -32,10 +30,8 @@ class Employee {
     required this.name,
     required this.email,
     required this.position,
-    required this.employeeId,
     required this.department,
     required this.bankAccount,
-    required this.taxId,
     required this.location,
     required this.cryptoAddress,
     required this.cryptoCurrency,
@@ -94,11 +90,9 @@ class Payslip {
     return Employee(
       name: 'Kamlesh Panwar',
       email: 'kkamlesh286@gmail.com',
-      position: 'Senior Flutter Developer',
-      employeeId: 'HF-2025-009',
+      position: 'Flutter Developer',
       department: 'Product Engineering',
       bankAccount: 'DE89 3704 0044 0532 0130 00',
-      taxId: 'DE-XX-XXXX',
       location: 'Kassel, Germany',
       cryptoAddress: '0x61717eee1c05918c8a7c9c5a5606907141711ca5',
       cryptoCurrency: 'USDT',

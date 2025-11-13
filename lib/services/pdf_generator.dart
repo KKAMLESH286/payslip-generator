@@ -201,7 +201,7 @@ class PayslipPdfGenerator {
               ),
               pw.Container(
                 width: 0.5,
-                height: 40,
+                height: 30,
                 color: PdfColors.black,
               ),
               pw.Expanded(
@@ -211,25 +211,7 @@ class PayslipPdfGenerator {
           ),
           pw.Container(height: 0.5, color: PdfColors.black),
 
-          // Row 2: Employee ID and PAN/Tax ID
-          pw.Row(
-            children: [
-              pw.Expanded(
-                child: _buildDetailCell('Employee ID:', payslip.employee.employeeId, isLeft: true),
-              ),
-              pw.Container(
-                width: 0.5,
-                height: 40,
-                color: PdfColors.black,
-              ),
-              pw.Expanded(
-                child: _buildDetailCell('PAN / Tax ID:', payslip.employee.taxId),
-              ),
-            ],
-          ),
-          pw.Container(height: 0.5, color: PdfColors.black),
-
-          // Row 3: Designation and Location
+          // Row 2: Designation and Location
           pw.Row(
             children: [
               pw.Expanded(
@@ -237,7 +219,7 @@ class PayslipPdfGenerator {
               ),
               pw.Container(
                 width: 0.5,
-                height: 40,
+                height: 30,
                 color: PdfColors.black,
               ),
               pw.Expanded(
@@ -247,7 +229,7 @@ class PayslipPdfGenerator {
           ),
           pw.Container(height: 0.5, color: PdfColors.black),
 
-          // Row 4: Department and Pay Period
+          // Row 3: Department and Pay Period
           pw.Row(
             children: [
               pw.Expanded(
@@ -255,7 +237,7 @@ class PayslipPdfGenerator {
               ),
               pw.Container(
                 width: 0.5,
-                height: 40,
+                height: 30,
                 color: PdfColors.black,
               ),
               pw.Expanded(
@@ -268,7 +250,7 @@ class PayslipPdfGenerator {
           ),
           pw.Container(height: 0.5, color: PdfColors.black),
 
-          // Row 5: Pay Date
+          // Row 4: Pay Date
           pw.Row(
             children: [
               pw.Expanded(
@@ -276,7 +258,7 @@ class PayslipPdfGenerator {
               ),
               pw.Container(
                 width: 0.5,
-                height: 40,
+                height: 30,
                 color: PdfColors.black,
               ),
               pw.Expanded(
@@ -291,7 +273,7 @@ class PayslipPdfGenerator {
 
   static pw.Widget _buildDetailCell(String label, String value, {bool isLeft = false}) {
     return pw.Container(
-      padding: const pw.EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const pw.EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       child: pw.Row(
         children: [
           pw.SizedBox(
