@@ -22,7 +22,7 @@ class Employee {
   final String position;
   final String department;
   final String bankAccount;
-  final String panCard;
+  final String taxId;
   final String location;
   final String cryptoAddress;
   final String cryptoCurrency;
@@ -33,7 +33,7 @@ class Employee {
     required this.position,
     required this.department,
     required this.bankAccount,
-    required this.panCard,
+    required this.taxId,
     required this.location,
     required this.cryptoAddress,
     required this.cryptoCurrency,
@@ -95,7 +95,7 @@ class Payslip {
       position: 'Flutter Developer',
       department: 'Product Engineering',
       bankAccount: '70010392360',
-      panCard: 'GXTPK7054L',
+      taxId: 'GXTPK7054L',
       location: 'Remote (India)',
       cryptoAddress: '0x61717eee1c05918c8a7c9c5a5606907141711ca5',
       cryptoCurrency: 'USDT',

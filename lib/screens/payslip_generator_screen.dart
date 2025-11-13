@@ -187,7 +187,7 @@ class _PayslipGeneratorScreenState extends State<PayslipGeneratorScreen> {
                     _buildInfoRow('Department:', 'Product Engineering'),
                     _buildInfoRow('Email:', 'kkamlesh286@gmail.com'),
                     _buildInfoRow('Bank A/C:', '70010392360'),
-                    _buildInfoRow('PAN Card:', 'GXTPK7054L'),
+                    _buildInfoRow('Tax ID:', 'GXTPK7054L'),
                   ],
                 ),
               ),

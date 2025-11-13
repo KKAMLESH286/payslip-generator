@@ -211,7 +211,7 @@ class PayslipPdfGenerator {
           ),
           pw.Container(height: 0.5, color: PdfColors.black),
 
-          // Row 2: Designation and PAN Card
+          // Row 2: Designation and Tax ID
           pw.Row(
             children: [
               pw.Expanded(
@@ -223,7 +223,7 @@ class PayslipPdfGenerator {
                 color: PdfColors.black,
               ),
               pw.Expanded(
-                child: _buildDetailCell('PAN Card:', payslip.employee.panCard),
+                child: _buildDetailCell('Tax ID:', payslip.employee.taxId),
               ),
             ],
           ),
