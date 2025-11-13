@@ -2,7 +2,6 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import '../models/payslip.dart';
 
 class PayslipPdfGenerator {
@@ -59,16 +58,6 @@ class PayslipPdfGenerator {
     final pdf = pw.Document();
     final dateFormat = DateFormat('dd MMM yyyy');
     final currencyFormat = NumberFormat.currency(symbol: '', decimalDigits: 2);
-
-    // Load employer signature image
-    pw.ImageProvider? signatureImage;
-    try {
-      final imageData = await rootBundle.load('assets/employer_signature.png');
-      signatureImage = pw.MemoryImage(imageData.buffer.asUint8List());
-    } catch (e) {
-      // Signature image not found, will display without image
-      signatureImage = null;
-    }
 
     pdf.addPage(
       pw.Page(
@@ -160,7 +149,7 @@ class PayslipPdfGenerator {
               pw.Spacer(),
 
               // Signature Section
-              _buildSignatureSection(payslip.company, signatureImage),
+              _buildSignatureSection(payslip.company),
             ],
           );
         },
@@ -472,7 +461,7 @@ class PayslipPdfGenerator {
     );
   }
 
-  static pw.Widget _buildSignatureSection(Company company, pw.ImageProvider? signatureImage) {
+  static pw.Widget _buildSignatureSection(Company company) {
     return pw.Row(
       mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
       children: [
@@ -486,16 +475,7 @@ class PayslipPdfGenerator {
                 fontWeight: pw.FontWeight.bold,
               ),
             ),
-            pw.SizedBox(height: 5),
-            // Signature image if available
-            if (signatureImage != null)
-              pw.Container(
-                width: 80,
-                height: 20,
-                child: pw.Image(signatureImage, fit: pw.BoxFit.contain),
-              )
-            else
-              pw.SizedBox(height: 20),
+            pw.SizedBox(height: 30),
             pw.Container(
               width: 150,
               decoration: const pw.BoxDecoration(
