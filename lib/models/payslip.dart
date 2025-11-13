@@ -20,6 +20,11 @@ class Employee {
   final String name;
   final String email;
   final String position;
+  final String employeeId;
+  final String department;
+  final String bankAccount;
+  final String taxId;
+  final String location;
   final String cryptoAddress;
   final String cryptoCurrency;
 
@@ -27,6 +32,11 @@ class Employee {
     required this.name,
     required this.email,
     required this.position,
+    required this.employeeId,
+    required this.department,
+    required this.bankAccount,
+    required this.taxId,
+    required this.location,
     required this.cryptoAddress,
     required this.cryptoCurrency,
   });
@@ -36,24 +46,38 @@ class Payslip {
   final Company company;
   final Employee employee;
   final DateTime paymentDate;
-  final String paymentPeriod;
-  final double grossSalary;
-  final double netSalary;
-  final Map<String, double> deductions;
-  final Map<String, double> additions;
+  final DateTime periodStart;
+  final DateTime periodEnd;
+  final double basicSalary;
+  final double hra;
+  final double bonus;
+  final double otherAllowances;
+  final double taxWithholding;
+  final double socialSecurity;
+  final double healthInsurance;
+  final double otherDeductions;
   final String payslipNumber;
 
   Payslip({
     required this.company,
     required this.employee,
     required this.paymentDate,
-    required this.paymentPeriod,
-    required this.grossSalary,
-    required this.netSalary,
-    required this.deductions,
-    required this.additions,
+    required this.periodStart,
+    required this.periodEnd,
+    required this.basicSalary,
+    required this.hra,
+    required this.bonus,
+    required this.otherAllowances,
+    required this.taxWithholding,
+    required this.socialSecurity,
+    required this.healthInsurance,
+    required this.otherDeductions,
     required this.payslipNumber,
   });
+
+  double get totalEarnings => basicSalary + hra + bonus + otherAllowances;
+  double get totalDeductions => taxWithholding + socialSecurity + healthInsurance + otherDeductions;
+  double get netPay => totalEarnings - totalDeductions;
 
   static Company heyFlutterCompany() {
     return Company(
@@ -70,7 +94,12 @@ class Payslip {
     return Employee(
       name: 'Kamlesh Panwar',
       email: 'kkamlesh286@gmail.com',
-      position: 'Flutter Developer',
+      position: 'Senior Flutter Developer',
+      employeeId: 'HF-2025-009',
+      department: 'Product Engineering',
+      bankAccount: 'DE89 3704 0044 0532 0130 00',
+      taxId: 'DE-XX-XXXX',
+      location: 'Kassel, Germany',
       cryptoAddress: '0x61717eee1c05918c8a7c9c5a5606907141711ca5',
       cryptoCurrency: 'USDT',
     );
