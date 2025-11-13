@@ -211,11 +211,29 @@ class PayslipPdfGenerator {
           ),
           pw.Container(height: 0.5, color: PdfColors.black),
 
-          // Row 2: Designation and Location
+          // Row 2: Designation and PAN Card
           pw.Row(
             children: [
               pw.Expanded(
                 child: _buildDetailCell('Designation:', payslip.employee.position, isLeft: true),
+              ),
+              pw.Container(
+                width: 0.5,
+                height: 30,
+                color: PdfColors.black,
+              ),
+              pw.Expanded(
+                child: _buildDetailCell('PAN Card:', payslip.employee.panCard),
+              ),
+            ],
+          ),
+          pw.Container(height: 0.5, color: PdfColors.black),
+
+          // Row 3: Department and Location
+          pw.Row(
+            children: [
+              pw.Expanded(
+                child: _buildDetailCell('Department:', payslip.employee.department, isLeft: true),
               ),
               pw.Container(
                 width: 0.5,
@@ -229,32 +247,15 @@ class PayslipPdfGenerator {
           ),
           pw.Container(height: 0.5, color: PdfColors.black),
 
-          // Row 3: Department and Pay Period
+          // Row 4: Pay Period and Pay Date
           pw.Row(
             children: [
-              pw.Expanded(
-                child: _buildDetailCell('Department:', payslip.employee.department, isLeft: true),
-              ),
-              pw.Container(
-                width: 0.5,
-                height: 30,
-                color: PdfColors.black,
-              ),
               pw.Expanded(
                 child: _buildDetailCell(
                   'Pay Period:',
                   '${dateFormat.format(payslip.periodStart)} - ${dateFormat.format(payslip.periodEnd)}',
+                  isLeft: true,
                 ),
-              ),
-            ],
-          ),
-          pw.Container(height: 0.5, color: PdfColors.black),
-
-          // Row 4: Pay Date
-          pw.Row(
-            children: [
-              pw.Expanded(
-                child: pw.Container(),
               ),
               pw.Container(
                 width: 0.5,
