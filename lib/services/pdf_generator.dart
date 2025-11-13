@@ -145,6 +145,11 @@ class PayslipPdfGenerator {
                   ],
                 ),
               ),
+
+              pw.Spacer(),
+
+              // Prepared by section (without signature line)
+              _buildPreparedBySection(payslip.company),
             ],
           );
         },
@@ -453,6 +458,30 @@ class PayslipPdfGenerator {
           ),
         ],
       ),
+    );
+  }
+
+  static pw.Widget _buildPreparedBySection(Company company) {
+    return pw.Column(
+      crossAxisAlignment: pw.CrossAxisAlignment.start,
+      children: [
+        pw.Text(
+          'Prepared by:',
+          style: pw.TextStyle(
+            fontSize: 9,
+            fontWeight: pw.FontWeight.bold,
+          ),
+        ),
+        pw.SizedBox(height: 5),
+        pw.Text(
+          company.ceo,
+          style: const pw.TextStyle(fontSize: 9),
+        ),
+        pw.Text(
+          company.name,
+          style: const pw.TextStyle(fontSize: 8),
+        ),
+      ],
     );
   }
 }
