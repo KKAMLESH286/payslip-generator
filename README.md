@@ -105,14 +105,41 @@ lib/
 - Company bank details
 - Professional footer
 
-### PDF Layout
+### PDF Layout (Enhanced Design)
 
-The generated PDF includes:
-- A4 page format
-- Professional styling with headers and borders
-- Clear sections for all information
-- Currency formatting (EUR)
+The generated PDF includes a **professional, modern design** with:
+
+**Visual Design:**
+- A4 page format with optimized margins
+- Modern gradient headers with blue color scheme
+- Professional typography with clear hierarchy
+- Color-coded sections for better readability
+- Rounded corners and elegant borders
+
+**Layout Components:**
+- **Modern Header**: Gradient blue banner with company details and CEO information
+- **Title Bar**: Large, prominent payslip title with payment period and document number
+- **Two-Column Info Cards**: Side-by-side employee details and bank information
+- **Salary Table**: Professional table layout with:
+  - Clear column headers (Description & Amount)
+  - Color-coded additions (green) and deductions (orange)
+  - Shaded section headers
+  - Bold green gradient footer for net salary
+- **Payment Card**: Orange gradient card highlighting cryptocurrency payment method
+- **Professional Footer**: Computer-generated disclaimer and company information
+
+**Color Scheme:**
+- Primary Blue (#1565C0) - Headers and main elements
+- Dark Blue (#0D47A1) - Secondary elements
+- Success Green (#2E7D32) - Net salary and positive amounts
+- Warning Orange (#FF6F00) - Deductions and payment card
+- Professional grey tones for text and backgrounds
+
+**Typography:**
+- Currency formatting (EUR with symbol)
 - Date formatting (DD.MM.YYYY)
+- Letter spacing for emphasis
+- Multiple font weights for hierarchy
 
 ## Development
 
