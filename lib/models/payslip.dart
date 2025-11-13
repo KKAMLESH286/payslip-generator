@@ -96,7 +96,7 @@ class Payslip {
       department: 'Product Engineering',
       bankAccount: '70010392360',
       panCard: 'GXTPK7054L',
-      location: 'Kassel, Germany',
+      location: 'Remote (India)',
       cryptoAddress: '0x61717eee1c05918c8a7c9c5a5606907141711ca5',
       cryptoCurrency: 'USDT',
     );
